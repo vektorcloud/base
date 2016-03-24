@@ -12,6 +12,10 @@ dependencies:
         docker build -t ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}:${CIRCLE_BRANCH} .
       fi
 
+test:
+  override:
+    - docker run -t --entrypoint /bin/sh ${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}:latest -c 'echo'
+
 deployment:
   hub:
     branch: master
