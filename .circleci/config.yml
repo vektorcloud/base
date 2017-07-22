@@ -16,5 +16,5 @@ jobs:
             else
               docker tag base quay.io/vektorcloud/base:${CIRCLE_BRANCH}
             fi
-            docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS quay.io
+            docker login -u $DOCKER_USER -p $DOCKER_PASS quay.io
             docker push quay.io/vektorcloud/base
