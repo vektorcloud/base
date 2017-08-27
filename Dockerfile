@@ -1,3 +1,3 @@
-FROM alpine:3.6
+FROM alpine:edge
 
 RUN apk add --no-cache ca-certificates libressl
