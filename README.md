@@ -1,6 +1,6 @@
 # base
 
-![circleci][circleci]
+[![circleci][circleci]](https://circleci.com/gh/vektorcloud/base)
 
 Base Alpine image with ca-certificates installed
 
