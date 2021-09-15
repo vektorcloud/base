@@ -11,10 +11,6 @@ jobs:
       - run: docker build -t base .
       - deploy: 
           command: |
-            if [[ "$CIRCLE_BRANCH" == "master" ]]; then
-              docker tag base quay.io/vektorcloud/base:latest
-            else
-              docker tag base quay.io/vektorcloud/base:${CIRCLE_BRANCH}
-            fi
+            docker tag base quay.io/vektorcloud/base:$(grep FROM Dockerfile  | cut -f2 -d\:)
             docker login -u $DOCKER_USER -p $DOCKER_PASS quay.io
             docker push quay.io/vektorcloud/base
